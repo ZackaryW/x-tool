@@ -1,0 +1,1 @@
+from xtool_ext.shortcuts import XToolShortcuts
