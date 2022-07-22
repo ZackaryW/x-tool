@@ -8,7 +8,7 @@
             "name": "cli",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/cli.py",
+            "program": "${workspaceFolder}/xtoolCli/cli.py",
             "args": [
                 "--path", "tests/deploy",
                 "--source", "tests/source"
