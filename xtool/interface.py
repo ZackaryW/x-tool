@@ -1,8 +1,8 @@
 from abc import abstractmethod
-import abc
-
+import sqlalchemy
+from xtool.ctx import XToolContext
 from xtool.exception import XToolNotImplementedException
-
+from xtool.entry import XToolEntry
 class XToolManageInterface:
     """
     this interface defines the intent for each method
@@ -57,3 +57,24 @@ class XToolManageInterface:
         """
 
         raise XToolNotImplementedException("backupPackageUsrData")
+
+    @abstractmethod
+    def purgeAll(self):
+        """
+        purge all data in the database
+        """
+
+        raise XToolNotImplementedException("purgeAll")
+
+class XToolDBMockInterface(XToolManageInterface):
+    """
+    this is a mock interface for XToolDB
+    """
+
+    engine : sqlalchemy.engine.Engine
+    _base : sqlalchemy.engine.base
+    _sourcePath : str
+    _targetPath : str
+    XToolEntry : XToolEntry 
+    extensions : dict
+    globalContext : XToolContext
