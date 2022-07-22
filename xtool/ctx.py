@@ -25,3 +25,16 @@ class XToolContext:
 
         for key, value in kwargs.items():
             setattr(self, key, value)
+
+    def get(self, key, default=None):
+        """
+        standard getter for the class
+
+        (getattr is used)
+
+        Args:
+            key (str):  the key to get
+            default (optional): the default value to return if key is not found
+        """
+
+        return getattr(self, key, default)
